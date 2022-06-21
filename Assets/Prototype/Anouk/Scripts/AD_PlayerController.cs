@@ -55,6 +55,14 @@ public class AD_PlayerController : MonoBehaviour
         return Physics.CheckSphere(transform.position - (Vector3.up * sphereRadius), groundCheckRadius, groundLayer);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Collectible")
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
+
     // void OnDrawGizmosSelected()
     // {
     //     // For debugging
