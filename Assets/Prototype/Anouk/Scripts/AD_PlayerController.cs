@@ -31,7 +31,7 @@ public class AD_PlayerController : MonoBehaviour
     {
         if (OnGround())
         {
-            rb.AddForce(movement * speed);
+            rb.AddForce(movement * speed, ForceMode.Acceleration);
 
             // No input from player
             if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
