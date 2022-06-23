@@ -15,9 +15,4 @@ public class Animal : Interactable
         // Disable/Destroy
         Destroy(gameObject);    
     }
-
-    public override string GetName()
-    {
-        return animalType;
-    }
 }

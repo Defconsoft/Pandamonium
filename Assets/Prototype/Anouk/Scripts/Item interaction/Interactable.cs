@@ -3,8 +3,7 @@ using UnityEngine;
 public abstract class Interactable : MonoBehaviour
 {
     public bool isInteractable = true;
-
-    public abstract string GetName();
+    
     public abstract void Interact();
     
     public void Disable() 

@@ -13,9 +13,4 @@ public class Orange : Collectible
         // Disable/Destroy
         Destroy(gameObject);    
     }
-
-    public override string GetName()
-    {
-        return fruitType;
-    }
 }
