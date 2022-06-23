@@ -24,7 +24,6 @@ public class AD_GameManager : MonoBehaviour
     {
         fruitScores[type]++;
         fruitScoresUI.UpdateScoresUI(type, fruitScores[type]);
-        Debug.Log(fruitScores[type]);
     }
 
     private void AddAnimalToCollection(string animalType)
