@@ -3,7 +3,7 @@ using System.Collections;
 
 
 //Make the camera work
-public class CameraController : MonoBehaviour {
+public class RC_CameraController : MonoBehaviour {
 
 	public GameObject player;
 

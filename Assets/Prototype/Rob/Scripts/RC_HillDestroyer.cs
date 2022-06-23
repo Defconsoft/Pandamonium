@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HillDestroyer : MonoBehaviour
+public class RC_HillDestroyer : MonoBehaviour
 {
     private GameObject Player;
     public GameObject spawnOrigin;
@@ -16,7 +16,7 @@ public class HillDestroyer : MonoBehaviour
     void Update()
     {
         if (Player.transform.position.z - transform.position.z > 10f) {
-            spawnOrigin.GetComponent<HillGenerator>().currentSegments--;
+            spawnOrigin.GetComponent<RC_HillGenerator>().currentSegments--;
             Destroy(this.gameObject);
         }
     }
