@@ -12,9 +12,12 @@ public class AD_GameManager : MonoBehaviour
         {"Orange", 0}
     };
 
+    private List<string> collectedAnimals = new List<string>();
+
     void Start()
     {
         AD_EventManager.ItemCollected += IncreaseItemCounter;
+        AD_EventManager.AnimalCollected += AddAnimalToCollection;
     }
 
     private void IncreaseItemCounter(string type)
@@ -22,6 +25,11 @@ public class AD_GameManager : MonoBehaviour
         fruitScores[type]++;
         fruitScoresUI.UpdateScoresUI(type, fruitScores[type]);
         Debug.Log(fruitScores[type]);
+    }
+
+    private void AddAnimalToCollection(string animalType)
+    {
+        collectedAnimals.Add(animalType);
     }
 
     public int GetFruitScore(string type)
