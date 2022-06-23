@@ -34,10 +34,10 @@ public class AD_PlayerController : MonoBehaviour
             rb.AddForce(movement * speed, ForceMode.Acceleration);
 
             // No input from player
-            if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
-            {
-                rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, speed * 0.1f * Time.deltaTime); // Slow down
-            }
+            // if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
+            // {
+            //     rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, speed * 0.1f * Time.deltaTime); // Slow down
+            // }
         }
     }
 
@@ -57,9 +57,11 @@ public class AD_PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Collectible")
+        // Check if it is Interactable, if so, call interaction function
+        Interactable interactable = other.GetComponent<Interactable>();
+        if (interactable)
         {
-            other.gameObject.SetActive(false);
+           interactable.Interact();
         }
     }
 

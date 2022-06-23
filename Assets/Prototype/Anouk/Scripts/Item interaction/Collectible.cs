@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectible : MonoBehaviour
+public abstract class Collectible : Interactable
 {
 
     [SerializeField]
@@ -10,13 +10,7 @@ public class Collectible : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Rotate();
         Scale();
-    }
-
-    private void Rotate()
-    {
-        transform.Rotate(new Vector3 (15, 30, 45) * Time.deltaTime);
     }
 
     private void Scale()
