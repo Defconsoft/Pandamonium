@@ -11,11 +11,8 @@ public class RC_HillGenerator : MonoBehaviour
     public int maxSegments; //total number of segments at any one time
     public int currentSegments; // the current number of segments alive
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    private float MoveZ;
+    private float MoveY;
 
     // Update is called once per frame
     void Update()
@@ -30,9 +27,12 @@ public class RC_HillGenerator : MonoBehaviour
     {
         GameObject clone = Instantiate(HillParts[Random.Range(0, HillParts.Length)], Spawnpoint.transform);
         clone.transform.parent = HillPartContainer.transform;
-        clone.GetComponent<RC_HillDestroyer>().spawnOrigin = this.gameObject;
+        clone.GetComponent<RC_HillPrefab>().spawnOrigin = this.gameObject;
         currentSegments++;
-        Spawnpoint.transform.position = new Vector3 (Spawnpoint.transform.position.x, Spawnpoint.transform.position.y - 2.6f, Spawnpoint.transform.position.z + 9.66f);
+        //Works how how far to move things
+        MoveY = clone.GetComponent<RC_HillPrefab>().ymove;
+        MoveZ = clone.GetComponent<RC_HillPrefab>().zmove;
+        Spawnpoint.transform.position = new Vector3 (Spawnpoint.transform.position.x, Spawnpoint.transform.position.y - (MoveY * 2), Spawnpoint.transform.position.z + (MoveZ * 2));
 
     }
 }
