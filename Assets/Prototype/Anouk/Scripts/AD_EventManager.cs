@@ -7,6 +7,12 @@ public class AD_EventManager : MonoBehaviour
 {
     public static event Action<string> ItemCollected;
     public static event Action<string> AnimalCollected;
+    public static event Action LifeLost;
+
+    public static void LostLife()
+    {
+        LifeLost?.Invoke();
+    }
 
     public static void CollectItem(string name)
     {

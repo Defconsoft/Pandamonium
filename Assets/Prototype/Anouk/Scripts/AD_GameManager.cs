@@ -5,6 +5,7 @@ using UnityEngine;
 public class AD_GameManager : MonoBehaviour
 {
     public ScoreManagerUI fruitScoresUI;
+    public int lives = 3;
 
     private IDictionary<string, int> fruitScores = new Dictionary<string, int>(){
         {"Apple", 0},
@@ -18,6 +19,7 @@ public class AD_GameManager : MonoBehaviour
     {
         AD_EventManager.ItemCollected += IncreaseItemCounter;
         AD_EventManager.AnimalCollected += AddAnimalToCollection;
+        AD_EventManager.LifeLost += LoseLife;
     }
 
     private void IncreaseItemCounter(string type)
@@ -34,5 +36,15 @@ public class AD_GameManager : MonoBehaviour
     public int GetFruitScore(string type)
     {
         return fruitScores[type];
+    }
+
+    private void LoseLife()
+    {
+        lives--;
+        if (lives == 0)
+        {
+            // Game over
+            Debug.Log("Game over");
+        }
     }
 }

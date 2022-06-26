@@ -18,6 +18,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     private Vector3 movement;
     [SerializeField]
     private float sensitivity = 0.2f;
+    public GameObject HillCanvas;
 
     [Header("Robs Stuff")]
     public bool HillGame = true;
@@ -94,6 +95,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         theBear.Move = true;
         yield return new WaitForSeconds (4f);
         BattleCanvas.SetActive (true);
+        HillCanvas.SetActive(false);
 
     }
 

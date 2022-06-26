@@ -112,6 +112,7 @@ public class RC_BattleSystem : MonoBehaviour
         } else if (state == BattleState.LOST)
         {
             dialogueText.text = "YOU SUCK GO PLAY FORTNITEZ OR SUMMIT";
+            AD_EventManager.LostLife();
         }
     }
 
