@@ -28,6 +28,9 @@ public class RC_BattleSystem : MonoBehaviour
     public GameObject attack1,attack2,attack3, enemyAttack;
     private GameObject tempAttackFX;
 
+    [Header("Anouk's crap")]
+    public GameObject gameOverDialogue;
+
 
     // Start is called before the first frame update
     void Start()
@@ -113,6 +116,7 @@ public class RC_BattleSystem : MonoBehaviour
         {
             dialogueText.text = "YOU SUCK GO PLAY FORTNITEZ OR SUMMIT";
             AD_EventManager.LostLife();
+            gameOverDialogue.SetActive(true);            
         }
     }
 
