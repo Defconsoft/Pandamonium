@@ -33,7 +33,6 @@ public class RC_BuildingCleaner : MonoBehaviour
 
 
     void Update() {
-        Debug.Log (Shrink);
 
         if (Shrink){
             // Divide deltaTime by the duration to stretch out the time it takes for t to go from 0 to 1.
