@@ -29,6 +29,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     Transform CityStartPoint;
     public CinemachineVirtualCamera CityCam;
     public RC_BearController theBear;
+    public GameObject BattleCanvas;
 
     
     
@@ -91,6 +92,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         CityCam.m_Priority = 2;
         yield return new WaitForSeconds(2f);
         theBear.Move = true;
+        yield return new WaitForSeconds (4f);
+        BattleCanvas.SetActive (true);
 
     }
 
