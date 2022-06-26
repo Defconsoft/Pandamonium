@@ -7,11 +7,11 @@ public class RC_StartCity : MonoBehaviour
 
     private GameObject cityObject;
     public GameObject spawnOrigin;
-    private RC_HillGenerator hillGen;
+    private RC_HillGenerator_AD_edit hillGen;
 
     private void Start() {
         cityObject = GameObject.Find("City");
-        hillGen = spawnOrigin.GetComponent<RC_HillGenerator>();
+        hillGen = spawnOrigin.GetComponent<RC_HillGenerator_AD_edit>();
     }
 
 
