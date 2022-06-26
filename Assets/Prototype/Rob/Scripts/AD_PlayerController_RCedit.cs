@@ -27,6 +27,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     private float perc = 0f;
     Vector3 lerpStartPoint;
     Transform CityStartPoint;
+    public CinemachineVirtualCamera CityCam;
+    public RC_BearController theBear;
 
     
     
@@ -81,6 +83,14 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         Vector3 jumpPoint = new Vector3 (0, transform.position.y, transform.position.z + 50f);
         GetComponent<Transform>().DOLocalJump (jumpPoint, 6f, 1, 4f);
         GetComponent<Rigidbody>().isKinematic = false;
+        StartCoroutine(SwitchToCity());
+    }
+
+    IEnumerator SwitchToCity(){
+        yield return new WaitForSeconds(4f);
+        CityCam.m_Priority = 2;
+        yield return new WaitForSeconds(2f);
+        theBear.Move = true;
 
     }
 
