@@ -32,11 +32,12 @@ public class RC_CityBuilder : MonoBehaviour
 
 
     [Header("BuildingGenerationStuff")]
-    public Color32 BldColor;
+    //public Color32 BldColor;
     public int BldHeightMax;
     public int SpecialBuildingHeightMax;
     private int BldHeight;
     public float SpawnPosIncrease;
+    float offset; // for the color stuff
 
 
     // Start is called before the first frame update
@@ -57,7 +58,7 @@ public class RC_CityBuilder : MonoBehaviour
             GameObject clone = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the base
             clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
             GameObject tempGO = clone.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-            tempGO.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+            tempGO.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
             BldHeight = Random.Range (1, BldHeightMax); // Decides how big the building is going to be.
             spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
 
@@ -75,7 +76,7 @@ public class RC_CityBuilder : MonoBehaviour
                 GameObject floor = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the floor
                 floor.transform.parent = clone.transform; //Moves the floow into its base container
                 GameObject tempFloor = floor.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-                tempFloor.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+                tempFloor.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
                 spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
             }
 
@@ -92,7 +93,7 @@ public class RC_CityBuilder : MonoBehaviour
             GameObject clone = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the base
             clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
             GameObject tempGO = clone.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-            tempGO.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+            tempGO.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
             BldHeight = Random.Range (1, BldHeightMax); // Decides how big the building is going to be.
             spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
 
@@ -110,7 +111,7 @@ public class RC_CityBuilder : MonoBehaviour
                 GameObject floor = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the floor
                 floor.transform.parent = clone.transform; //Moves the floow into its base container
                 GameObject tempFloor = floor.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-                tempFloor.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+                tempFloor.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
                 spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
             }
         }
@@ -125,7 +126,7 @@ public class RC_CityBuilder : MonoBehaviour
             GameObject clone = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the base
             clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
             GameObject tempGO = clone.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-            tempGO.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+            tempGO.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
             BldHeight = Random.Range (1, BldHeightMax); // Decides how big the building is going to be.
             spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
 
@@ -143,7 +144,7 @@ public class RC_CityBuilder : MonoBehaviour
                 GameObject floor = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the floor
                 floor.transform.parent = clone.transform; //Moves the floow into its base container
                 GameObject tempFloor = floor.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-                tempFloor.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+                tempFloor.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
                 spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
             }
 
@@ -158,7 +159,7 @@ public class RC_CityBuilder : MonoBehaviour
             GameObject clone = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the base
             clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
             GameObject tempGO = clone.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-            tempGO.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+            tempGO.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
             BldHeight = Random.Range (1, BldHeightMax); // Decides how big the building is going to be.
             spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
 
@@ -168,7 +169,7 @@ public class RC_CityBuilder : MonoBehaviour
                 GameObject floor = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the floor
                 floor.transform.parent = clone.transform; //Moves the floow into its base container
                 GameObject tempFloor = floor.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-                tempFloor.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+                tempFloor.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
                 spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
             }
 
@@ -185,7 +186,7 @@ public class RC_CityBuilder : MonoBehaviour
             GameObject clone = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the base
             clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
             GameObject tempGO = clone.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-            tempGO.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+            tempGO.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
             BldHeight = Random.Range (8, SpecialBuildingHeightMax); // Decides how big the building is going to be.
             spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
 
@@ -203,7 +204,7 @@ public class RC_CityBuilder : MonoBehaviour
                 GameObject floor = Instantiate (BldPrefabs[BldSize], spawnposition); // Instatiates the floor
                 floor.transform.parent = clone.transform; //Moves the floow into its base container
                 GameObject tempFloor = floor.gameObject.transform.GetChild(0).gameObject; // Grabs the model object
-                tempFloor.GetComponent<Renderer>().material.color = BldColor; // Changes the color
+                tempFloor.GetComponent<Renderer>().material.SetTextureOffset("_BaseMap", new Vector2(offset, 0)); // Changes the color
                 spawnposition.position = new Vector3 (spawnposition.position.x, spawnposition.position.y + SpawnPosIncrease, spawnposition.position.z); // Move spawnpoint to next floor
             }
 
@@ -215,11 +216,15 @@ public class RC_CityBuilder : MonoBehaviour
 
     void RandomizeColor()
     {
+        offset = Random.Range (0, 1f);
+
+        /* Old Method
         BldColor = new Color32(
             ( byte )Random.Range( 0, 255 ),        // R
             ( byte )Random.Range( 0, 255 ),        // G
             ( byte )Random.Range( 0, 255 ),        // B
             ( byte )Random.Range( 0, 255 ) );      // A
+            */
     }
 
     private void Update() {
