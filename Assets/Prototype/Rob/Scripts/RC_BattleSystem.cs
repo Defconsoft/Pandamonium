@@ -30,6 +30,7 @@ public class RC_BattleSystem : MonoBehaviour
 
     [Header("Anouk's crap")]
     public GameObject gameOverDialogue;
+    public Animator anim;
 
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class RC_BattleSystem : MonoBehaviour
         dialogueText.text = "You pwned his ass!";
 
         Instantiate (tempAttackFX, enemyPrefab.transform);
+        anim.SetTrigger("Attack");
 
         yield return new WaitForSeconds (2f);
 

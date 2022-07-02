@@ -19,6 +19,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     [SerializeField]
     private float sensitivity = 0.2f;
     public GameObject HillCanvas;
+    public Animator anim;
 
     [Header("Robs Stuff")]
     public bool HillGame = true;
@@ -48,12 +49,14 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     void FixedUpdate()
     {
-
+        
+        
         if (HillGame){
 
 
             if (OnGround())
             {
+                anim.SetBool("IsRunning", HillGame); // because we just continuously run when its hillgame and otherwise we dont
                 rb.AddForce(movement * speed, ForceMode.Acceleration);
 
                 // No input from player
@@ -89,6 +92,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     }
 
     IEnumerator SwitchToCity(){
+        anim.SetBool("IsRunning", false);
         yield return new WaitForSeconds(4f);
         CityCam.m_Priority = 2;
         yield return new WaitForSeconds(2f);
@@ -96,7 +100,6 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         yield return new WaitForSeconds (4f);
         BattleCanvas.SetActive (true);
         HillCanvas.SetActive(false);
-
     }
 
     public void OnJump()
