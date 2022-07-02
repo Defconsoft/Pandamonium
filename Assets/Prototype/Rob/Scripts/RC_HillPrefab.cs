@@ -8,6 +8,7 @@ public class RC_HillPrefab : MonoBehaviour
     public GameObject spawnOrigin;
     public float zmove;
     public float ymove;
+    public bool Startpiece;
 
 
     public GameObject[] HillParts;
@@ -18,17 +19,28 @@ public class RC_HillPrefab : MonoBehaviour
     {
         Player = GameObject.FindWithTag("Player");
         
-        //Decide which hill part we are using
-        int tempNum = Random.Range (0, HillParts.Length);
-        HillParts[tempNum].SetActive (true);
+        if (!Startpiece){
+            //Decide which hill part we are using
+            int tempNum = Random.Range (0, HillParts.Length);
+            HillParts[tempNum].SetActive (true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Player.transform.position.z - transform.position.z > 30f) {
-            spawnOrigin.GetComponent<RC_HillGenerator>().currentSegments--;
+        if (!Startpiece)
+        {
+            if (Player.transform.position.z - transform.position.z > 50f) {
+                spawnOrigin.GetComponent<RC_HillGenerator>().currentSegments--;
+                Destroy(this.gameObject);
+            }
+        } 
+        else 
+        {
+            if (Player.transform.position.z - transform.position.z > 50f) {
             Destroy(this.gameObject);
+            }
         }
     }
 }
