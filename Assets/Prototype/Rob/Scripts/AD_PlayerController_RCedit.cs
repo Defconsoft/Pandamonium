@@ -32,6 +32,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public CinemachineVirtualCamera StartCam, RollingCam, CityCam;
     public RC_BearController theBear;
     public GameObject BattleCanvas;
+    bool isGrounded;
+    public float GroundDistance;
 
     
     
@@ -50,11 +52,12 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     void FixedUpdate()
     {
         
-        
+        rb.AddForce(Physics.gravity * 9.81f);
+
         if (HillGame){
 
 
-            if (OnGround())
+            if (isGrounded)
             {
                 anim.SetBool("IsRunning", HillGame); // because we just continuously run when its hillgame and otherwise we dont
                 rb.AddForce(movement * speed, ForceMode.Acceleration);
@@ -80,7 +83,15 @@ public class AD_PlayerController_RCedit : MonoBehaviour
             }
         }
 
-
+        Color rayColor;
+        if (!Physics.Raycast (transform.position, -Vector3.up, GroundDistance)){
+            isGrounded = false;
+            rayColor = Color.red;
+        } else {
+            isGrounded = true;
+            rayColor = Color.green;
+        }
+        
     }
 
     private void RunTheCutScene()
@@ -104,17 +115,13 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     public void OnJump()
     {
-        if (OnGround())
+        if (isGrounded)
         {
             // allow jump only if player is currently grounded
             rb.AddForce(Vector3.up * jumpSpeed , ForceMode.Impulse);
         }
     }
 
-    public bool OnGround()
-    {
-        return Physics.CheckSphere(transform.position - (Vector3.up * sphereRadius), groundCheckRadius, groundLayer);
-    }
 
     private void OnTriggerEnter(Collider other)
     {
