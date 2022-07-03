@@ -10,6 +10,15 @@ public class RC_HillPrefab : MonoBehaviour
     public float ymove;
     public bool Startpiece;
 
+    [Header("SpawningStuff")]
+    public Vector3 centre;
+    public Vector3 size;
+    public int NumberToSpawn;
+    private Vector3 spawnPos;
+    private Vector3 lastPos;
+    private bool spawnable;
+    public GameObject[] fruitItems;
+
 
     public GameObject[] HillParts;
 
@@ -24,6 +33,34 @@ public class RC_HillPrefab : MonoBehaviour
             int tempNum = Random.Range (0, HillParts.Length);
             HillParts[tempNum].SetActive (true);
         }
+
+
+        SpawnItems();
+
+    }
+
+    private void SpawnItems()
+    {
+        for (int i = 0; i < NumberToSpawn; i++)
+        {
+            while (spawnable) {
+                spawnPos = (transform.localPosition + centre) + new Vector3 (Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+                
+                RaycastHit hit;
+                Ray ray = new Ray (spawnPos, Vector3.down);
+                Physics.Raycast (ray, out hit);
+                if (hit.collider.tag == "HillFloor") {
+                    spawnable = false;
+                }
+
+            }
+
+            GameObject clone = Instantiate (fruitItems[Random.Range(0, fruitItems.Length)], spawnPos, Quaternion.identity);
+
+            lastPos = spawnPos;
+            spawnable = true;
+        
+        }
     }
 
     // Update is called once per frame
@@ -31,17 +68,23 @@ public class RC_HillPrefab : MonoBehaviour
     {
         if (!Startpiece)
         {
-            if (Player.transform.position.z - transform.position.z > 50f) {
+            if (Player.transform.position.z - transform.position.z > 200f) {
                 spawnOrigin.GetComponent<RC_HillGenerator>().currentSegments--;
                 Destroy(this.gameObject);
             }
         } 
         else 
         {
-            if (Player.transform.position.z - transform.position.z > 50f) {
-            Destroy(this.gameObject);
+            if (Player.transform.position.z - transform.position.z > 200f) {
+                Destroy(this.gameObject);
             }
         }
+    }
+
+
+    void OnDrawGizmosSelected() {
+        Gizmos.color = new Color (1,0,0,0.5f);
+        Gizmos.DrawCube(transform.localPosition + centre, size);   
     }
 }
 
