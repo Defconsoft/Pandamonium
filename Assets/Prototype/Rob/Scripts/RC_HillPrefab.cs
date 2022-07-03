@@ -18,6 +18,7 @@ public class RC_HillPrefab : MonoBehaviour
     private Vector3 lastPos;
     private bool spawnable;
     public GameObject[] fruitItems;
+    private GameObject collectibles;
 
 
     public GameObject[] HillParts;
@@ -27,7 +28,7 @@ public class RC_HillPrefab : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindWithTag("Player");
-        
+        collectibles = GameObject.Find("Collectibles");
         if (!Startpiece){
             //Decide which hill part we are using
             int tempNum = Random.Range (0, HillParts.Length);
@@ -43,22 +44,22 @@ public class RC_HillPrefab : MonoBehaviour
     {
         for (int i = 0; i < NumberToSpawn; i++)
         {
-            while (spawnable) {
+            while (!spawnable) {
                 spawnPos = (transform.localPosition + centre) + new Vector3 (Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
                 
                 RaycastHit hit;
                 Ray ray = new Ray (spawnPos, Vector3.down);
                 Physics.Raycast (ray, out hit);
                 if (hit.collider.tag == "HillFloor") {
-                    spawnable = false;
+                    spawnable = true;
                 }
 
             }
 
             GameObject clone = Instantiate (fruitItems[Random.Range(0, fruitItems.Length)], spawnPos, Quaternion.identity);
-
+            clone.transform.parent = collectibles.transform;
             lastPos = spawnPos;
-            spawnable = true;
+            spawnable = false;
         
         }
     }

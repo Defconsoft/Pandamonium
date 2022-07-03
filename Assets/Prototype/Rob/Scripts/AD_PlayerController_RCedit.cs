@@ -29,7 +29,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     private float perc = 0f;
     Vector3 lerpStartPoint;
     Transform CityStartPoint;
-    public CinemachineVirtualCamera CityCam;
+    public CinemachineVirtualCamera StartCam, RollingCam, CityCam;
     public RC_BearController theBear;
     public GameObject BattleCanvas;
 
@@ -118,12 +118,23 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.tag == "CamTrigger"){
+            StartCam.m_Priority = 0;
+            RollingCam.m_Priority = 1;
+        }
+
+
         // Check if it is Interactable, if so, call interaction function
         Interactable interactable = other.GetComponent<Interactable>();
         if (interactable)
         {
            interactable.Interact();
         }
+
+
+
+
     }
 
     // void OnDrawGizmosSelected()
