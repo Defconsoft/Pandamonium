@@ -61,6 +61,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
             {
                 anim.SetBool("IsRunning", HillGame); // because we just continuously run when its hillgame and otherwise we dont
                 rb.AddForce(movement * speed, ForceMode.Acceleration);
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
 
                 // No input from player
                 // if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
@@ -69,6 +70,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
                 // }
             } else { //AirSpeed Controller
                 rb.AddForce(movement * speed/airspeed, ForceMode.Acceleration);
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
             }
 
         }

@@ -8241,7 +8241,7 @@ MonoBehaviour:
   speed: 35
   airspeed: 5
   sphereRadius: 1.55
-  jumpSpeed: 18
+  jumpSpeed: 50
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
