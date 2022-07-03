@@ -14,14 +14,17 @@ public class RC_HillPrefab : MonoBehaviour
     public Vector3 centre;
     public Vector3 size;
     public int NumberToSpawn;
+    public int NumberTreesSpawn;
     private Vector3 spawnPos;
     private Vector3 lastPos;
     private bool spawnable;
+    private bool treespawnable;
     public GameObject[] fruitItems;
     private GameObject collectibles;
 
 
     public GameObject[] HillParts;
+    public GameObject tree;
 
 
     // Start is called before the first frame update
@@ -35,7 +38,7 @@ public class RC_HillPrefab : MonoBehaviour
             HillParts[tempNum].SetActive (true);
         }
 
-
+        SpawnTrees();
         SpawnItems();
 
     }
@@ -51,6 +54,7 @@ public class RC_HillPrefab : MonoBehaviour
                 Ray ray = new Ray (spawnPos, Vector3.down);
                 Physics.Raycast (ray, out hit);
                 if (hit.collider.tag == "HillFloor") {
+                    spawnPos = hit.point;
                     spawnable = true;
                 }
 
@@ -58,8 +62,34 @@ public class RC_HillPrefab : MonoBehaviour
 
             GameObject clone = Instantiate (fruitItems[Random.Range(0, fruitItems.Length)], spawnPos, Quaternion.identity);
             clone.transform.parent = collectibles.transform;
-            lastPos = spawnPos;
             spawnable = false;
+        
+        }
+    }
+
+
+    private void SpawnTrees()
+    {
+        for (int i = 0; i < NumberTreesSpawn; i++)
+        {
+            Debug.Log("tree");
+            while (!treespawnable) {
+                spawnPos = (transform.localPosition + centre) + new Vector3 (Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+                
+                RaycastHit hit;
+                Ray ray = new Ray (spawnPos, Vector3.down);
+                Physics.Raycast (ray, out hit);
+                if (hit.collider.tag == "HillFloor") {
+                    lastPos = hit.point;
+                    treespawnable = true;
+                }
+
+            }
+
+            GameObject clone = Instantiate (tree, lastPos, Quaternion.Euler (new Vector3 (0, Random.Range(0,360), 0)));
+            clone.transform.parent = collectibles.transform;
+            clone.transform.localScale = new Vector3 (Random.Range (0.75f, 1.5f),Random.Range (0.75f, 1.5f), Random.Range (0.75f, 1.5f));
+            treespawnable = false;
         
         }
     }

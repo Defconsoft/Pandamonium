@@ -3052,11 +3052,13 @@ MonoBehaviour:
   centre: {x: 0, y: 17.54, z: 48.4}
   size: {x: 42.25, y: 0, z: 35.56}
   NumberToSpawn: 10
+  NumberTreesSpawn: 20
   fruitItems:
   - {fileID: 3460477385718434893, guid: ce4767472d4dfe3458898fe7cfdd1531, type: 3}
   - {fileID: 5933111275590537669, guid: 8518691944a57c94c99efd1570135eac, type: 3}
   - {fileID: 2086070916037011028, guid: a6e42c5d46289b947b820eaab8e5f31b, type: 3}
   HillParts: []
+  tree: {fileID: 919132149155446097, guid: 2699d267c14f3374fb1166aa8b63ca89, type: 3}
 --- !u!1 &336973161
 GameObject:
   m_ObjectHideFlags: 0
