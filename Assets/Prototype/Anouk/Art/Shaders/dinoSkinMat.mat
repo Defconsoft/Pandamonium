@@ -56,8 +56,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _EmissionPower: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _texTransitionFactor: -2.65
+    - _texTransitionFactor: 0
     m_Colors: []
   m_BuildTextureStacks: []

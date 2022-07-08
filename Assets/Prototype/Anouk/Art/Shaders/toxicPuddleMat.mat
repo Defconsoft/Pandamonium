@@ -42,14 +42,14 @@ Material:
     - _Smoothness: 1.4
     - _TransparencyPower: -1.2
     - _VoronoiAngleOffset: 1
-    - _VoronoiPower: 12.66
+    - _VoronoiPower: 2
     - _VoronoiScale: 10
     - _WobbleAmount: 0.03
     - _WobbleFrequency: 3
     - _WobbleHeight: 0.7
     - _WobbleSpeed: 14
     m_Colors:
-    - _BaseColor: {r: 0.27962425, g: 0.25013348, b: 0.7264151, a: 1}
+    - _BaseColor: {r: 0.2509804, g: 0.32045147, b: 0.7254902, a: 1}
     - _NormalSpeed: {r: 0, g: -0.75, b: 0, a: 0}
     - _VoronoiColor: {r: 0.06344278, g: 0.32075477, b: 0.04387684, a: 1}
     - _VoronoiSpeed: {r: 0, g: -0.2, b: 0, a: 0}

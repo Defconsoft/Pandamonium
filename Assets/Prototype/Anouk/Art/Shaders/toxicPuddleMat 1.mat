@@ -49,7 +49,7 @@ Material:
     - _WobbleHeight: 1
     - _WobbleSpeed: 10.77
     m_Colors:
-    - _BaseColor: {r: 0.27962425, g: 0.25013348, b: 0.7264151, a: 1}
+    - _BaseColor: {r: 0.2509804, g: 0.32045147, b: 0.7254902, a: 1}
     - _NormalSpeed: {r: 0, g: 0.2, b: 0, a: 0}
     - _VoronoiColor: {r: 0.06344278, g: 0.32075477, b: 0.04387684, a: 1}
     - _VoronoiSpeed: {r: 0, g: 0.1, b: 0, a: 0}
