@@ -24,7 +24,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public bool TransitionGame;
     public float lerpTime;
     float transLerpTime;
-    Vector3 lerpStartPoint;
+    public Transform lerpEndPoint;
     Transform CityStartPoint;
     public CinemachineVirtualCamera StartCam, RollingCam, CityCam, CutsceneCam;
     public CinemachineBrain camBrain;
@@ -49,7 +49,6 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     private void Update() {
         if (!HillGame) {
-            lerpStartPoint = transform.position;
             if (TransitionGame){
                 TransitionGame = false;
                 GetComponent<Rigidbody>().isKinematic = true;
@@ -110,6 +109,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         anim.SetBool("IsRunning", false);
         yield return new WaitForSeconds(4f);
         GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Transform>().DOLocalMove (lerpEndPoint.position, 2f);
         camBrain.m_DefaultBlend.m_Time = 2;
         CutsceneCam.m_Priority = 1;
         CityCam.m_Priority = 2;
