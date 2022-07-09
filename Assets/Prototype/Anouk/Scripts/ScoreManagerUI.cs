@@ -20,6 +20,6 @@ public class ScoreManagerUI : MonoBehaviour
 
     public void UpdateScoresUI(string fruitType, int newScore)
     {
-        fruitScores[fruitType].text = ": " + newScore.ToString();
+        fruitScores[fruitType].text = newScore.ToString();
     }
 }
