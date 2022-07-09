@@ -35,6 +35,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     bool isGrounded;
     public float GroundDistance;
     bool Started;
+    bool Intro = true;
 
     
     
@@ -57,6 +58,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         StartCut.m_Priority = 0;
         yield return new WaitForSeconds (4f);
         StartDialog.SetActive (true);
+        Intro = false;
         camBrain.m_DefaultBlend.m_Time = 2;
     }
 
@@ -64,7 +66,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     private void Update() {
 
-        if (!Started){
+        if (!Started && !Intro){
             if (Keyboard.current.wKey.wasPressedThisFrame){
                 Started = true;
                 StartDialog.SetActive (false);
@@ -91,25 +93,27 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         
         rb.AddForce(Physics.gravity * 9.81f);
 
-        if (HillGame){
+        if (!Intro){
+            if (HillGame){
 
 
-            if (isGrounded)
-            {
-                anim.SetBool("IsRunning", HillGame); // because we just continuously run when its hillgame and otherwise we dont
-                rb.AddForce(movement * speed, ForceMode.Acceleration);
-                rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
+                if (isGrounded)
+                {
+                    anim.SetBool("IsRunning", HillGame); // because we just continuously run when its hillgame and otherwise we dont
+                    rb.AddForce(movement * speed, ForceMode.Acceleration);
+                    rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
 
-                // No input from player
-                // if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
-                // {
-                //     rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, speed * 0.1f * Time.deltaTime); // Slow down
-                // }
-            } else { //AirSpeed Controller
-                rb.AddForce(movement * speed/airspeed, ForceMode.Acceleration);
-                rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
+                    // No input from player
+                    // if (movement.magnitude <= sensitivity && rb.velocity.magnitude > 0.0f)
+                    // {
+                    //     rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, speed * 0.1f * Time.deltaTime); // Slow down
+                    // }
+                } else { //AirSpeed Controller
+                    rb.AddForce(movement * speed/airspeed, ForceMode.Acceleration);
+                    rb.velocity = Vector3.ClampMagnitude(rb.velocity, speed);
+                }
+
             }
-
         }
 
 
@@ -141,6 +145,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         camBrain.m_DefaultBlend.m_Time = 2;
         CutsceneCam.m_Priority = 1;
         CityCam.m_Priority = 2;
+        Destroy(GameObject.Find("Hill"), 1f);
         yield return new WaitForSeconds(2f);
         theBear.Move = true;
         yield return new WaitForSeconds (4f);
@@ -162,7 +167,6 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     {
 
         if (other.tag == "CamTrigger"){
-            Debug.Log ("FIRE");
             StartCam.m_Priority = 0;
             RollingCam.m_Priority = 1;
         }

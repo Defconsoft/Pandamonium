@@ -96,19 +96,19 @@ public class RC_HillPrefab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (!Startpiece)
+        if (!Startpiece)
         {
-            if (Player.transform.position.z - transform.position.z > 200f) {
+            if (Player.transform.position.z - transform.position.z > 400f) {
                 spawnOrigin.GetComponent<RC_HillGenerator>().currentSegments--;
                 Destroy(this.gameObject);
             }
         } 
         else 
         {
-            if (Player.transform.position.z - transform.position.z > 200f) {
+            if (Player.transform.position.z - transform.position.z > 400f) {
                 Destroy(this.gameObject);
             }
-        }*/
+        }
     }
 
 

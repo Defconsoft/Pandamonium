@@ -41,6 +41,7 @@ public class RC_HillGenerator : MonoBehaviour
 
             //spawns in the end object
             GameObject endPoint = Instantiate(endObject, Spawnpoint.transform);
+            endPoint.transform.parent = HillPartContainer.transform;
             GameObject endTrigger = endPoint.transform.Find("HillEndTrigger").gameObject;
             endTrigger.GetComponent<RC_StartCity>().spawnOrigin = this.gameObject;
 
