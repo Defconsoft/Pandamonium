@@ -28,4 +28,9 @@ public class DinoAnimationControl : MonoBehaviour
     {
         anim.SetTrigger("BattleStart");
     }
+
+    public void StartDeathAnim()
+    {
+        anim.SetTrigger("Die");
+    }
 }

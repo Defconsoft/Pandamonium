@@ -329,7 +329,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1899,7 +1899,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1915,7 +1915,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356573, y: 0.9531149, z: -0.114276096, w: -0.2782091}
+  m_LocalRotation: {x: -0.03335659, y: 0.9531149, z: -0.114276126, w: -0.27820912}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9631,7 +9631,7 @@ MonoBehaviour:
   CityCam: {fileID: 2081645203}
   CutsceneCam: {fileID: 144375802}
   camBrain: {fileID: 2410188513086928914}
-  theBear: {fileID: 3469287837396874550}
+  dino: {fileID: 1253792777}
   BattleCanvas: {fileID: 459372976}
   StartDialog: {fileID: 467820567}
   GroundDistance: 1.8
@@ -9652,6 +9652,7 @@ MonoBehaviour:
   damage: 10
   maxHP: 100
   currentHP: 100
+  anim: {fileID: 0}
 --- !u!4 &813697925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fe5b70ac31f7126448d80f9c4f8880b7,
@@ -15399,6 +15400,170 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe5b70ac31f7126448d80f9c4f8880b7, type: 3}
+--- !u!1001 &1253792774
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1318690700}
+    m_Modifications:
+    - target: {fileID: 1104586337090477648, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_Name
+      value: DinoBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477648, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8137eca196f9598458aa141add3493fb, type: 3}
+--- !u!4 &1253792775 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1104586337090477649, guid: 8137eca196f9598458aa141add3493fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253792774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1253792776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1104586337090477648, guid: 8137eca196f9598458aa141add3493fb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1253792774}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1253792777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253792776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24787049c63bb6449a85ddbf182ec760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  target: {fileID: 1349861115}
+  Move: 0
+--- !u!54 &1253792778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253792776}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!64 &1253792779
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253792776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7979052412317837203, guid: f1c7c3a71b14de849a079524cb6f8965, type: 3}
+--- !u!114 &1253792780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253792776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ca0475f9342bb4aa06ac8177275134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Strawberry Dino
+  unitLevel: 25
+  damage: 20
+  maxHP: 100
+  currentHP: 100
+  anim: {fileID: 0}
 --- !u!1001 &1260207447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15974,6 +16139,7 @@ Transform:
   - {fileID: 807226}
   - {fileID: 1107292177}
   - {fileID: 1018381051}
+  - {fileID: 1253792775}
   - {fileID: 543450653546035856}
   - {fileID: 1349861115}
   m_Father: {fileID: 6660660494031922848}
@@ -16405,7 +16571,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1318690700}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1350496488 stripped
 Transform:
@@ -19872,7 +20038,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24183,7 +24349,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -24718,7 +24884,7 @@ Transform:
   - {fileID: 5384218563968862436}
   - {fileID: 3465079406745679693}
   m_Father: {fileID: 1318690700}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &630149519135414553
 GameObject:
@@ -24871,11 +25037,11 @@ GameObject:
   - component: {fileID: 3469287837396874552}
   m_Layer: 0
   m_Name: character_bear
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &931790418828887355
 GameObject:
   m_ObjectHideFlags: 0
@@ -26146,6 +26312,7 @@ MonoBehaviour:
   damage: 20
   maxHP: 100
   currentHP: 100
+  anim: {fileID: 0}
 --- !u!33 &3469287837873702353
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26731,7 +26898,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

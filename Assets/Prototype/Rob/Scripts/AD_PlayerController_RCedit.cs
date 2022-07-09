@@ -29,7 +29,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     Transform CityStartPoint;
     public CinemachineVirtualCamera StartCut, StartCam, RollingCam, CityCam, CutsceneCam;
     public CinemachineBrain camBrain;
-    public RC_BearController theBear;
+    // public RC_BearController theBear;
+    public AD_DinoController dino;
     public GameObject BattleCanvas;
     public GameObject StartDialog;
     bool isGrounded;
@@ -147,7 +148,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         CityCam.m_Priority = 2;
         Destroy(GameObject.Find("Hill"), 1f);
         yield return new WaitForSeconds(2f);
-        theBear.Move = true;
+        // theBear.Move = true;
+        dino.Move = true;
         yield return new WaitForSeconds (4f);
         BattleCanvas.SetActive (true);
         HillCanvas.SetActive(false);

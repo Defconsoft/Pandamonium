@@ -42,10 +42,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104586337090477649}
-  - component: {fileID: 1104586337090477662}
+  - component: {fileID: 1253792778}
+  - component: {fileID: 1253792779}
+  - component: {fileID: 1253792782}
+  - component: {fileID: 1253792777}
+  - component: {fileID: 1253792780}
   m_Layer: 0
   m_Name: DinoBoss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,14 +63,58 @@ Transform:
   m_GameObject: {fileID: 1104586337090477648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 639227570581524200}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1104586337090477662
+--- !u!54 &1253792778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104586337090477648}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!64 &1253792779
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104586337090477648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7979052412317837203, guid: f1c7c3a71b14de849a079524cb6f8965, type: 3}
+--- !u!136 &1253792782
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104586337090477648}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.58733875
+  m_Height: 1.6186321
+  m_Direction: 2
+  m_Center: {x: -0, y: 0.58694714, z: 0}
+--- !u!114 &1253792777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -75,9 +123,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104586337090477648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a474d981c9ceb4ea06628830d8cdbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 24787049c63bb6449a85ddbf182ec760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  target: {fileID: 0}
+  Move: 0
+--- !u!114 &1253792780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104586337090477648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ca0475f9342bb4aa06ac8177275134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Strawberry Dino
+  unitLevel: 25
+  damage: 20
+  maxHP: 100
+  currentHP: 100
   anim: {fileID: 1104586337541218633}
 --- !u!1 &1481191206772972151
 GameObject:
@@ -731,6 +799,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1104586336949020931}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3362872933445679917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6773672816105057746, guid: f1c7c3a71b14de849a079524cb6f8965,
+    type: 3}
+  m_PrefabInstance: {fileID: 1104586336949020931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &867462664
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362872933445679917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.0028069871
+  m_Height: 0.008125986
+  m_Direction: 1
+  m_Center: {x: 0.00033945355, y: 0.0009370087, z: 3.86853e-10}
 --- !u!137 &4045245664055943029 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: -5226464662934587786, guid: f1c7c3a71b14de849a079524cb6f8965,
