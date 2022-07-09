@@ -17,6 +17,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     private Vector3 movement;
     [SerializeField]
     public GameObject HillCanvas;
+    public GameObject StartCanvas;
     public Animator anim;
 
     [Header("Robs Stuff")]
@@ -26,12 +27,14 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     float transLerpTime;
     public Transform lerpEndPoint;
     Transform CityStartPoint;
-    public CinemachineVirtualCamera StartCam, RollingCam, CityCam, CutsceneCam;
+    public CinemachineVirtualCamera StartCut, StartCam, RollingCam, CityCam, CutsceneCam;
     public CinemachineBrain camBrain;
     public RC_BearController theBear;
     public GameObject BattleCanvas;
+    public GameObject StartDialog;
     bool isGrounded;
     public float GroundDistance;
+    bool Started;
 
     
     
@@ -39,6 +42,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        StartCoroutine (StartGame());
     }
 
     void OnMove(InputValue movementValue)
@@ -47,7 +51,31 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         movement = new Vector3(movementVector.x, 0.0f, movementVector.y);
     }
 
+
+    IEnumerator StartGame() {
+        yield return new WaitForSeconds (1f);
+        StartCut.m_Priority = 0;
+        yield return new WaitForSeconds (4f);
+        StartDialog.SetActive (true);
+        camBrain.m_DefaultBlend.m_Time = 2;
+    }
+
+
+
     private void Update() {
+
+        if (!Started){
+            if (Keyboard.current.wKey.wasPressedThisFrame){
+                Started = true;
+                StartDialog.SetActive (false);
+                StartCanvas.SetActive (false);
+                HillCanvas.SetActive (true);
+
+            }
+        }
+
+
+
         if (!HillGame) {
             if (TransitionGame){
                 TransitionGame = false;
@@ -134,6 +162,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     {
 
         if (other.tag == "CamTrigger"){
+            Debug.Log ("FIRE");
             StartCam.m_Priority = 0;
             RollingCam.m_Priority = 1;
         }
