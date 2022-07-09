@@ -9,7 +9,8 @@ public class RC_HillGenerator : MonoBehaviour
     public GameObject[] HillParts; //array of all the different hill parts in use
     public GameObject HillPartContainer; //stores all the bits
     public GameObject Spawnpoint; //moves to where the next piece will spawn
-    public GameObject endTriggerObject;
+    public GameObject endObject;
+    public GameObject CityObject;
 
     [Header("Hill Variables")]
     public int maxSegments; //total number of segments at any one time
@@ -38,11 +39,17 @@ public class RC_HillGenerator : MonoBehaviour
             EndOnce = true;
             canGenerate = false;
 
-            //moves the spawnpoint back
-            Vector3 endTrigPos = new Vector3 (Spawnpoint.transform.position.x, Spawnpoint.transform.position.y + (MoveY * 2), Spawnpoint.transform.position.z - (MoveZ * 2));
-            //adds in the hill end trigger
-            GameObject endTrigger = Instantiate(endTriggerObject, endTrigPos, Quaternion.identity);
+            //spawns in the end object
+            GameObject endPoint = Instantiate(endObject, Spawnpoint.transform);
+            GameObject endTrigger = endPoint.transform.Find("HillEndTrigger").gameObject;
             endTrigger.GetComponent<RC_StartCity>().spawnOrigin = this.gameObject;
+
+                        //moves the city into position
+            CityObject.transform.position = new Vector3 (
+                Spawnpoint.transform.position.x,
+                Spawnpoint.transform.position.y - 70f,
+                Spawnpoint.transform.position.z + 125f
+            );
         }
 
 

@@ -12,12 +12,10 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public float airspeed;
     public float sphereRadius = 1.0f;
     public float jumpSpeed = 18.0f;
-    private float groundCheckRadius = 0.1f;
     public LayerMask groundLayer;
     private Rigidbody rb;
     private Vector3 movement;
     [SerializeField]
-    private float sensitivity = 0.2f;
     public GameObject HillCanvas;
     public Animator anim;
 
@@ -26,10 +24,10 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public bool TransitionGame;
     public float lerpTime;
     float transLerpTime;
-    private float perc = 0f;
     Vector3 lerpStartPoint;
     Transform CityStartPoint;
-    public CinemachineVirtualCamera StartCam, RollingCam, CityCam;
+    public CinemachineVirtualCamera StartCam, RollingCam, CityCam, CutsceneCam;
+    public CinemachineBrain camBrain;
     public RC_BearController theBear;
     public GameObject BattleCanvas;
     bool isGrounded;
@@ -47,6 +45,18 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
         movement = new Vector3(movementVector.x, 0.0f, movementVector.y);
+    }
+
+    private void Update() {
+        if (!HillGame) {
+            lerpStartPoint = transform.position;
+            if (TransitionGame){
+                TransitionGame = false;
+                GetComponent<Rigidbody>().isKinematic = true;
+                CityStartPoint = GameObject.Find ("PlayerStartPosition").transform;
+                RunTheCutScene();
+            }
+        }
     }
 
     void FixedUpdate()
@@ -75,15 +85,6 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
         }
 
-        if (!HillGame) {
-            lerpStartPoint = transform.position;
-            if (TransitionGame){
-                GetComponent<Rigidbody>().isKinematic = true;
-                CityStartPoint = GameObject.Find ("PlayerStartPosition").transform;
-                RunTheCutScene();
-                TransitionGame = false;
-            }
-        }
 
         Color rayColor;
         if (!Physics.Raycast (transform.position, -Vector3.up, GroundDistance)){
@@ -98,15 +99,19 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     private void RunTheCutScene()
     {
+        camBrain.m_DefaultBlend.m_Time = 0;
+        CutsceneCam.m_Priority = 2;
         Vector3 jumpPoint = new Vector3 (0, transform.position.y, transform.position.z + 50f);
-        GetComponent<Transform>().DOLocalJump (jumpPoint, 6f, 1, 4f);
-        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Transform>().DOLocalJump (jumpPoint, 4f, 1, 4f);
         StartCoroutine(SwitchToCity());
     }
 
     IEnumerator SwitchToCity(){
         anim.SetBool("IsRunning", false);
         yield return new WaitForSeconds(4f);
+        GetComponent<Rigidbody>().isKinematic = false;
+        camBrain.m_DefaultBlend.m_Time = 2;
+        CutsceneCam.m_Priority = 1;
         CityCam.m_Priority = 2;
         yield return new WaitForSeconds(2f);
         theBear.Move = true;
