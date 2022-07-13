@@ -36,9 +36,9 @@ public class RC_BattleUnit : MonoBehaviour
 
     IEnumerator Die()
     {
-        anim.SetTrigger("Die");
+        anim.SetBool("Dead", true);
         yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
 

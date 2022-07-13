@@ -70,7 +70,6 @@ public class RC_BattleSystem : MonoBehaviour
         dialogueText.text = "You pwned his ass!";
 
         Instantiate (tempAttackFX, enemyPrefab.transform);
-        anim.SetTrigger("Attack");
 
         yield return new WaitForSeconds (2f);
 
@@ -146,12 +145,10 @@ public class RC_BattleSystem : MonoBehaviour
             playerUnit.damage = 50;
             tempAttackFX = attack3;
         }
-
-
+        string attackTrigger = "Attack" + attackNo.ToString();
+        anim.SetTrigger(attackTrigger);
 
         StartCoroutine(PlayerAttack());
-
-        
     }
 
 }
