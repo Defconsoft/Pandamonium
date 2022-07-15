@@ -1915,7 +1915,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.114276126, w: -0.2782091}
+  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.11427612, w: -0.2782091}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13210,7 +13210,7 @@ MonoBehaviour:
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1089438392
 MonoBehaviour:
@@ -24414,7 +24414,7 @@ MonoBehaviour:
   enemyHUD: {fileID: 1001062844}
   dialogueText: {fileID: 1049243278}
   attack1: {fileID: 1132465174880224, guid: 44a9ad63a554c5a41b6530bfc5c1faff, type: 3}
-  attack2: {fileID: 1610468776334564, guid: 488f499c89c209944945fa5746dc175f, type: 3}
+  attack2: {fileID: 1659966760376348571, guid: fec3cb578a4cb9f4c9b94c1636d5a26e, type: 3}
   attack3: {fileID: 1187873550511094, guid: 66bdcc8522acf034180d42fc80952ca0, type: 3}
   enemyAttack: {fileID: 1277154925287174, guid: 3b517eddec185dd4a830743a742ad00b,
     type: 3}
