@@ -6,7 +6,7 @@ public class CrocAttack : MonoBehaviour
 {
     public float startY = -1;
     public float endY = 2;
-    public float lerpDuration = 0.8f;
+    public float lerpDuration = 0.5f;
     private float tempY;
     private float elapsedTime = 0;
 

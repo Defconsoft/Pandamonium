@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startY: -1
   endY: 2
-  lerpDuration: 1
+  lerpDuration: 0.7
 --- !u!1 &2001862304389351218
 GameObject:
   m_ObjectHideFlags: 0

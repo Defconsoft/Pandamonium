@@ -3598,7 +3598,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356577, y: 0.9531149, z: -0.1142761, w: -0.27820912}
+  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.11427612, w: -0.2782091}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44905,7 +44905,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1049243278}
   attack1: {fileID: 1132465174880224, guid: 44a9ad63a554c5a41b6530bfc5c1faff, type: 3}
   attack2: {fileID: 1659966760376348571, guid: fec3cb578a4cb9f4c9b94c1636d5a26e, type: 3}
-  attack3: {fileID: 1187873550511094, guid: 66bdcc8522acf034180d42fc80952ca0, type: 3}
+  attack3: {fileID: 3606565687977293030, guid: 018bcd67f099082408b350b398a3b451, type: 3}
   enemyAttack: {fileID: 1277154925287174, guid: 3b517eddec185dd4a830743a742ad00b,
     type: 3}
   gameOverDialogue: {fileID: 1094747456}
