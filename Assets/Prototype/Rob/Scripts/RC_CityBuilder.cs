@@ -12,6 +12,7 @@ public class RC_CityBuilder : MonoBehaviour
     [Range(0, 1)] public float LargeBldFloorChance;
     [Range(0, 1)] public float MediumBldFloorChance;
     [Range(0, 1)] public float SmallBldFloorChance;
+    [Range(0, 1)] public float CarChance;
     public GameObject BuildingContainer;
 
     [Header("SpawnpointArrays")]
@@ -20,6 +21,9 @@ public class RC_CityBuilder : MonoBehaviour
     public GameObject[] LongBuild; // 2x1
     public GameObject[] LargeBuild; // 2x2
     public GameObject[] SpecialBuild; // Customsize
+    public GameObject[] Trees;
+    public GameObject[] Cars;
+    public GameObject[] Trucks;
 
     [Header("BuildingPrefabs")]
     public GameObject[] BldPrefabs;
@@ -29,7 +33,9 @@ public class RC_CityBuilder : MonoBehaviour
                2 = MediumBld; // 1.5x1.5
                1 = LargeBld; // 2x2
                0 = SpecialBld; // Customsize */
-
+    public GameObject Tree;
+    public GameObject[] TruckMods;
+    public GameObject[] CarMods;
 
     [Header("BuildingGenerationStuff")]
     //public Color32 BldColor;
@@ -47,6 +53,36 @@ public class RC_CityBuilder : MonoBehaviour
     }
 
     void RunGenerator(){
+
+
+        //Generate the trees
+        for (int i = 0; i < Trees.Length; i++)
+        {
+            GameObject clone = Instantiate (Tree, Trees[i].transform.position, Quaternion.Euler (new Vector3 (0, Random.Range(0,360), 0)));
+            clone.transform.parent = BuildingContainer.transform;
+            clone.transform.localScale = new Vector3 (Random.Range (0.5f, 0.75f),Random.Range (0.5f, 0.75f), Random.Range (0.5f, 0.75f));
+        }
+
+        //Generate the Vehicles
+        for (int i = 0; i < Cars.Length; i++)
+        {
+            float tempNum = Random.Range (0f,1f);
+            if (tempNum >= CarChance){
+                GameObject clone = Instantiate (CarMods[Random.Range(0, CarMods.Length)], Cars[i].transform); // Instatiates the car
+                clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
+
+                } 
+        }
+
+        for (int i = 0; i < Trucks.Length; i++)
+        {
+            float tempNum = Random.Range (0f,1f);
+            if (tempNum >= CarChance){
+                GameObject clone = Instantiate (TruckMods[Random.Range(0, TruckMods.Length)], Trucks[i].transform); // Instatiates the car
+                clone.transform.parent = BuildingContainer.transform; //Moves base into its own container
+
+                } 
+        }
 
         //Generate the small buildings
         for (int i = 0; i < SmallBuild.Length; i++)
