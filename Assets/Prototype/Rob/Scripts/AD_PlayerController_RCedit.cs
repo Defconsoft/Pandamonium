@@ -141,7 +141,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     IEnumerator SwitchToCity(){
         anim.SetBool("IsRunning", false);
         yield return new WaitForSeconds(4f);
-        GetComponent<Rigidbody>().isKinematic = false;
+        // GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Transform>().DOLocalMove (lerpEndPoint.position, 2f);
         camBrain.m_DefaultBlend.m_Time = 2;
         CutsceneCam.m_Priority = 1;
