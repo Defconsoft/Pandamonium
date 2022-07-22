@@ -394,6 +394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HillEnd
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1080271b2758f664f8ef46d3d8e8e161,
+        type: 3}
+      propertyPath: m_TagString
+      value: HillFloor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1080271b2758f664f8ef46d3d8e8e161, type: 3}
 --- !u!4 &2610931813446316336 stripped
