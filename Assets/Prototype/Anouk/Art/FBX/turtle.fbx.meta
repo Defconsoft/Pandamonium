@@ -1,9 +1,53 @@
 fileFormatVersion: 2
-guid: 2b2ba1767e4a55741beda0122068f4bc
+guid: aecd1679f4128ae49bc67226ccfd5a41
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
-  externalObjects: {}
+  internalIDToNameTable:
+  - first:
+      74: -9129434720014514961
+    second: turtle|PoseLibCroc
+  - first:
+      74: 3856412529943182119
+    second: turtle|Run.001
+  - first:
+      74: -1212650788637560165
+    second: turtle|wave.001
+  - first:
+      74: -6827900383080642629
+    second: Armature.004|Attack01
+  - first:
+      74: 2850005457352369418
+    second: Armature.004|Attack02
+  - first:
+      74: -1111294150686044704
+    second: Armature.004|Attack03
+  - first:
+      74: 8641424537882322557
+    second: Armature.004|Attack03.001
+  - first:
+      74: -852645190781981240
+    second: Armature.004|Attack03.002
+  - first:
+      74: 2263333045268041191
+    second: Armature.004|Idle
+  - first:
+      74: -2290105560677875581
+    second: Armature.004|PoseLib
+  - first:
+      74: 1575867018300343091
+    second: Armature.004|PoseLibCroc
+  - first:
+      74: 1690476349912347297
+    second: Armature.004|Run
+  - first:
+      74: -3214441455449014129
+    second: Armature.004|Run.001
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: turtle_bod
+    second: {fileID: 2100000, guid: 94af2259fe6bd154cb2b05abadb091d1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
