@@ -15,6 +15,15 @@ ModelImporter:
   - first:
       74: 5234647100726251178
     second: tortoise|tortoiseShoot
+  - first:
+      74: -657141364384384478
+    second: tortoise|IdleTurtle
+  - first:
+      74: -9198523904508237484
+    second: tortoise|tortoiseFlame
+  - first:
+      74: 7990645372436037579
+    second: tortoise|TurtleWalk
   externalObjects:
   - first:
       type: UnityEngine:Material
