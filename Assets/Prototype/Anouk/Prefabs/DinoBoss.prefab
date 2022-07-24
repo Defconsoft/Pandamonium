@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 1253792778}
   - component: {fileID: 1253792779}
   - component: {fileID: 1253792782}
-  - component: {fileID: 1253792777}
   - component: {fileID: 1253792780}
+  - component: {fileID: 4203121980483849043}
   m_Layer: 0
   m_Name: DinoBoss
   m_TagString: Enemy
@@ -114,21 +114,6 @@ CapsuleCollider:
   m_Height: 1.6186321
   m_Direction: 2
   m_Center: {x: -0, y: 0.58694714, z: 0}
---- !u!114 &1253792777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104586337090477648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24787049c63bb6449a85ddbf182ec760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  target: {fileID: 0}
-  Move: 0
 --- !u!114 &1253792780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,6 +132,21 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   anim: {fileID: 1104586337541218633}
+--- !u!114 &4203121980483849043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104586337090477648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f7842d5e724384ea3b78989dc360b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  target: {fileID: 0}
+  Move: 0
 --- !u!1 &1481191206772972151
 GameObject:
   m_ObjectHideFlags: 0

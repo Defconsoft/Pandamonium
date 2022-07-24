@@ -30,7 +30,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public CinemachineVirtualCamera StartCut, StartCam, RollingCam, CityCam, CutsceneCam;
     public CinemachineBrain camBrain;
     // public RC_BearController theBear;
-    public AD_DinoController dino;
+    public AD_EnemyController enemy;
     public GameObject BattleCanvas;
     public GameObject StartDialog;
     bool isGrounded;
@@ -149,7 +149,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         Destroy(GameObject.Find("Hill"), 1f);
         yield return new WaitForSeconds(2f);
         // theBear.Move = true;
-        dino.Move = true;
+        enemy.Move = true;
         yield return new WaitForSeconds (4f);
         BattleCanvas.SetActive (true);
         HillCanvas.SetActive(false);
