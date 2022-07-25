@@ -69,8 +69,11 @@ public class RC_BattleSystem : MonoBehaviour
         enemyHUD.SetHP(enemyUnit.currentHP);
         dialogueText.text = "You pwned his ass!";
 
-        Instantiate (tempAttackFX, enemyPrefab.transform);
-
+        if (tempAttackFX != null)
+        {
+            Instantiate (tempAttackFX, enemyPrefab.transform);
+        }
+        
         yield return new WaitForSeconds (2f);
 
         if (isDead)
@@ -137,7 +140,7 @@ public class RC_BattleSystem : MonoBehaviour
 
         if (attackNo == 1) {
             playerUnit.damage = 5;
-            tempAttackFX = attack1;
+            tempAttackFX = null;
         } else if (attackNo == 2) {
             playerUnit.damage = 20;
             tempAttackFX = attack2;
