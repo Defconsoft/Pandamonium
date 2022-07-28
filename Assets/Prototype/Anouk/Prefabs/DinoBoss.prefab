@@ -230,6 +230,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &3107510405140991743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157431889736410636}
+  m_Layer: 0
+  m_Name: ThrowPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1157431889736410636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3107510405140991743}
+  m_LocalRotation: {x: -0.93837965, y: -0.000000041199428, z: 0.00000011186359, w: -0.34560615}
+  m_LocalPosition: {x: 0, y: -0.0014238851, z: 0.00057303533}
+  m_LocalScale: {x: 0.16666666, y: 0.16666667, z: 0.1666667}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 9175936688719056219}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -147.092, y: 0, z: 0}
 --- !u!1 &3206546503038196006
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +824,22 @@ MonoBehaviour:
   - {fileID: 7336281981192484437}
   - {fileID: 6699027617600581700}
   - {fileID: 6812394068010573556}
+--- !u!114 &3275873579009883322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258163930740134994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd6644d4b7da5b40841b74b36950c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  obj: {fileID: 6326823655035240327, guid: 58044a1df103583478d04baf8558e4c3, type: 3}
+  throwpoint: {fileID: 1157431889736410636}
+  direction: {x: 0, y: 0, z: 1}
 --- !u!4 &639227570581524200 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1c7c3a71b14de849a079524cb6f8965,

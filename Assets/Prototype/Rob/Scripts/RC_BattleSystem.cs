@@ -93,7 +93,7 @@ public class RC_BattleSystem : MonoBehaviour
         dialogueText.text = "Enemy Attack";
 
         // Instantiate (enemyAttack, playerPrefab.transform);
-        int randNum = Random.Range(0, 2);
+        int randNum = Random.Range(0, 3);
         enemyUnit.Attack(randNum);
 
         bool isDead = playerUnit.TakeDamage(enemyUnit.damage);
