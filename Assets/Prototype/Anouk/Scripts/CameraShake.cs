@@ -4,6 +4,8 @@ using UnityEngine;
 using Cinemachine;
 // using Cinemachine.Editor;
 using Cinemachine.Utility;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class CameraShake : MonoBehaviour
 {
@@ -11,10 +13,26 @@ public class CameraShake : MonoBehaviour
     public float frequemcyGain;
     public CinemachineVirtualCamera cm;
     public float shakeDuration;
+    public Volume volume;
+    private ChromaticAberration ca;
 
     void Start()
     {
         AD_EventManager.DamageDealt += DoShake;
+        AD_EventManager.DamageDealt += ChangeChromaticAberration;
+        volume.profile.TryGet(out ca);
+    }
+
+    void ChangeChromaticAberration()
+    {
+        StartCoroutine(ChromaticAberration());
+    }
+
+    private IEnumerator ChromaticAberration()
+    {
+        ca.active = true;
+        yield return new WaitForSeconds(shakeDuration);
+        ca.active = false;
     }
 
     public void DoShake()

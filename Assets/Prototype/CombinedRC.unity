@@ -44614,6 +44614,7 @@ MonoBehaviour:
   frequemcyGain: 2
   cm: {fileID: 2081645203}
   shakeDuration: 1
+  volume: {fileID: 422300331}
 --- !u!1001 &2082009547
 PrefabInstance:
   m_ObjectHideFlags: 0
