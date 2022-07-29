@@ -13,6 +13,7 @@ public class RC_BattleUnit : MonoBehaviour
     public int maxHP;
     public int currentHP;
     public Animator anim;
+    public List<string> ignoreCols = new List<string>();
 
     public bool TakeDamage(int dmg)
     {
@@ -30,7 +31,6 @@ public class RC_BattleUnit : MonoBehaviour
     public void Attack(int attackNumber)
     {
         string attackTrigger = "Attack" + attackNumber.ToString();
-        Debug.Log(attackTrigger);
         anim.SetTrigger(attackTrigger);
     }
 
@@ -39,6 +39,15 @@ public class RC_BattleUnit : MonoBehaviour
         anim.SetBool("Dead", true);
         yield return new WaitForSeconds(1.5f);
         gameObject.SetActive(false);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "AttackItem" && !ignoreCols.Contains(other.name))
+        {
+            AD_EventManager.TookDamage();
+            anim.SetTrigger("Ouch");
+        }
     }
 
 

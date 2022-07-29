@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 2964291114113292665}
   m_Layer: 0
   m_Name: redPandaRagdollHalfSize
-  m_TagString: Untagged
+  m_TagString: AttackItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

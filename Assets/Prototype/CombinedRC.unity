@@ -2670,12 +2670,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104022487}
   m_CullTransparentMesh: 1
---- !u!95 &106100938 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1104586337541218633, guid: 8137eca196f9598458aa141add3493fb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1253792774}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111576619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,7 +3598,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.03335659, y: 0.9531149, z: -0.114276126, w: -0.27820912}
+  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.11427612, w: -0.2782091}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12847,6 +12841,7 @@ GameObject:
   - component: {fileID: 540650048}
   - component: {fileID: 540650051}
   - component: {fileID: 540650049}
+  - component: {fileID: 540650052}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -12903,6 +12898,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &540650052
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540650047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!4 &546367703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970ee9b3ee5698848a073a842fd53729,
@@ -16838,7 +16850,14 @@ MonoBehaviour:
   damage: 10
   maxHP: 100
   currentHP: 100
-  anim: {fileID: 0}
+  anim: {fileID: 2140908478}
+  ignoreCols:
+  - turtle_shell
+  - Croc
+  - redPandaRagdollHalfSize
+  - redPandaRagdollHalfSize(Clone)
+  - Croc(Clone)
+  - turtle_shell(Clone)
 --- !u!1001 &809685473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27685,6 +27704,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1318690700}
     m_Modifications:
+    - target: {fileID: 1253792780, guid: 8137eca196f9598458aa141add3493fb, type: 3}
+      propertyPath: ignoreCols.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253792780, guid: 8137eca196f9598458aa141add3493fb, type: 3}
+      propertyPath: ignoreCols.Array.data[0]
+      value: toxic_puddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253792780, guid: 8137eca196f9598458aa141add3493fb, type: 3}
+      propertyPath: ignoreCols.Array.data[1]
+      value: Strawberry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253792780, guid: 8137eca196f9598458aa141add3493fb, type: 3}
+      propertyPath: ignoreCols.Array.data[2]
+      value: Strawberry(Clone)
+      objectReference: {fileID: 0}
     - target: {fileID: 1104586337090477648, guid: 8137eca196f9598458aa141add3493fb,
         type: 3}
       propertyPath: m_Name
@@ -27844,24 +27879,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7979052412317837203, guid: f1c7c3a71b14de849a079524cb6f8965, type: 3}
---- !u!114 &1253792780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253792776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ca0475f9342bb4aa06ac8177275134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Strawberry Dino
-  unitLevel: 25
-  damage: 20
-  maxHP: 100
-  currentHP: 100
-  anim: {fileID: 106100938}
 --- !u!114 &1253792781 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4203121980483849043, guid: 8137eca196f9598458aa141add3493fb,
@@ -44519,6 +44536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081645202}
   - component: {fileID: 2081645203}
+  - component: {fileID: 2081645204}
   m_Layer: 0
   m_Name: CityCam
   m_TagString: Untagged
@@ -44580,6 +44598,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 540650048}
+--- !u!114 &2081645204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081645201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83c7771668f4fb4684a565e4b5b2b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitudeGain: 2
+  frequemcyGain: 2
+  cm: {fileID: 2081645203}
+  shakeDuration: 1
 --- !u!1001 &2082009547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47178,6 +47212,7 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   anim: {fileID: 0}
+  ignoreCols: []
 --- !u!33 &3469287837873702353
 MeshFilter:
   m_ObjectHideFlags: 0

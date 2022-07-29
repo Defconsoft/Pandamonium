@@ -19,10 +19,6 @@ public class CollisionPoof : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // if (other.tag == "Enemy")
-        // {
-        //     StartCoroutine(PoofEffect());
-        // }
         StartCoroutine(PoofEffect());
     }
 
