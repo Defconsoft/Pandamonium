@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4999722023612030541}
   - component: {fileID: 929436144764904162}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: orange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5549284615231031425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5933111275590537688}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65c4477cba4c4344db7c2e8750fcbb29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 682338f1153c66c44a1221daa80ac8ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5933111275590537688}
-  - component: {fileID: 5933111275590537670}
   - component: {fileID: 5933111275590537689}
-  m_Layer: 0
+  - component: {fileID: 6459085870914168870}
+  m_Layer: 6
   m_Name: orange 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,21 +118,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5933111275590537670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5933111275590537669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43158cc491844e40ad32aae961f5a15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInteractable: 1
-  sinSpeed: 1.5
-  fruitType: Orange
 --- !u!65 &5933111275590537689
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -146,3 +131,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.81, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6459085870914168870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933111275590537669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 911fc19ce79159e409e2dc2cc2862077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleType: 3
+  rC_GameManager: {fileID: 0}
+  sinSpeed: 1.5

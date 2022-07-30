@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3460477385718434888}
   - component: {fileID: 3460477385718434889}
-  - component: {fileID: 1856497617952034935}
+  - component: {fileID: 287801022589671686}
   m_Layer: 6
-  m_Name: apple 1
+  m_Name: Bigsurf 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.91, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1856497617952034935
+--- !u!114 &287801022589671686
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911fc19ce79159e409e2dc2cc2862077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleType: 2
+  collectibleType: 5
   rC_GameManager: {fileID: 0}
   sinSpeed: 1.5
 --- !u!1 &8566620406473459392
@@ -135,7 +135,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8ce7919c9c469b64aab30c45df16f7aa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac2194410cb97fc49ad122bef8957d02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

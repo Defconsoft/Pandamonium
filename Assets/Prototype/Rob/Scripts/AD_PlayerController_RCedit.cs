@@ -17,7 +17,6 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     private Vector3 movement;
     [SerializeField]
     public GameObject HillCanvas;
-    public GameObject StartCanvas;
     public Animator anim;
 
     [Header("Robs Stuff")]
@@ -33,6 +32,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     public AD_EnemyController enemy;
     public GameObject BattleCanvas;
     public GameObject StartDialog;
+    public GameObject RollingDialog;
+
     bool isGrounded;
     public float GroundDistance;
     bool Started;
@@ -71,8 +72,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
             if (Keyboard.current.wKey.wasPressedThisFrame){
                 Started = true;
                 StartDialog.SetActive (false);
-                StartCanvas.SetActive (false);
                 HillCanvas.SetActive (true);
+                RollingDialog.SetActive (true);
 
             }
         }
