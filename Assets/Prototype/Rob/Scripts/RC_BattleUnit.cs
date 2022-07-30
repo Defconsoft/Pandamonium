@@ -8,14 +8,14 @@ public class RC_BattleUnit : MonoBehaviour
     public string unitName;
     public int unitLevel;
 
-    public int damage;
+    public float damage;
 
     public int maxHP;
-    public int currentHP;
+    public float currentHP;
     public Animator anim;
     public List<string> ignoreCols = new List<string>();
 
-    public bool TakeDamage(int dmg)
+    public bool TakeDamage(float dmg)
     {
         currentHP -= dmg;
 

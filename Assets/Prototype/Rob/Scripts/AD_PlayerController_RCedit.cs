@@ -31,6 +31,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     // public RC_BearController theBear;
     public AD_EnemyController enemy;
     public GameObject BattleCanvas;
+    
     public GameObject StartDialog;
     public GameObject RollingDialog;
 
@@ -85,6 +86,8 @@ public class AD_PlayerController_RCedit : MonoBehaviour
                 TransitionGame = false;
                 GetComponent<Rigidbody>().isKinematic = true;
                 CityStartPoint = GameObject.Find ("PlayerStartPosition").transform;
+                RollingDialog.SetActive (false);
+                HillCanvas.SetActive(false);
                 RunTheCutScene();
             }
         }
