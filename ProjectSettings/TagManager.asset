@@ -10,6 +10,20 @@ TagManager:
   - CamTrigger
   - Destructable
   - AttackItem
+  - Cherry_Icon
+  - Cherry_Text
+  - Pear_Icon
+  - Pear_Text
+  - Apple_Icon
+  - Apple_Text
+  - Orange_Icon
+  - Orange_Text
+  - Poison_Icon
+  - Poison_Text
+  - BigSurf_Icon
+  - BigSurf_Text
+  - Parley_Icon
+  - Parley_Text
   layers:
   - Default
   - TransparentFX

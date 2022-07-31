@@ -341,7 +341,7 @@ MonoBehaviour:
   Startpiece: 0
   centre: {x: 0, y: 37.5, z: 0}
   size: {x: 60.32, y: 0, z: 129.24}
-  NumberToSpawn: 10
+  NumberToSpawn: 50
   NumberTreesSpawn: 20
   fruitItems:
   - {fileID: 3460477385718434893, guid: ce4767472d4dfe3458898fe7cfdd1531, type: 3}

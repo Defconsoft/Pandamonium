@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3460477385718434888}
   - component: {fileID: 3460477385718434889}
-  - component: {fileID: -4436514425246671799}
+  - component: {fileID: 5129077724995097200}
   m_Layer: 6
   m_Name: Parley 1
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.91, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4436514425246671799
+--- !u!114 &5129077724995097200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,11 +56,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3460477385718434893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 911fc19ce79159e409e2dc2cc2862077, type: 3}
+  m_Script: {fileID: 11500000, guid: b58c7127a6ab07f4da3c575f41839ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectibleType: 6
-  rC_GameManager: {fileID: 0}
+  CollectType: {fileID: 3658156349038359445, guid: 3443e48bf8696fe46a4f5cd3e1dedbed,
+    type: 3}
+  ResourceType: Parley
   sinSpeed: 1.5
 --- !u!1 &8566620406473459392
 GameObject:

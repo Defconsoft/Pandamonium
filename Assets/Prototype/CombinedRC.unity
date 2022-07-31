@@ -540,7 +540,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8631068, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3299,7 +3299,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8631068, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8835,6 +8835,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &423347149 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3486332261713148117, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3486332261607888892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &427884103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9114,9 +9120,9 @@ MonoBehaviour:
   endObject: {fileID: 1815981263027351878, guid: 5d7d9bfb268d5044287c8d015968bcf7,
     type: 3}
   CityObject: {fileID: 1318690699}
-  maxSegments: 1
+  maxSegments: 5
   currentSegments: 0
-  MaxTotalSegments: 1
+  MaxTotalSegments: 10
 --- !u!1 &431618222
 GameObject:
   m_ObjectHideFlags: 0
@@ -15221,6 +15227,7 @@ GameObject:
   - component: {fileID: 805662272}
   - component: {fileID: 805662271}
   - component: {fileID: 805662276}
+  - component: {fileID: 805662278}
   - component: {fileID: 805662277}
   m_Layer: 0
   m_Name: Player
@@ -15467,6 +15474,27 @@ MonoBehaviour:
   - redPandaRagdollHalfSize(Clone)
   - Croc(Clone)
   - turtle_shell(Clone)
+--- !u!114 &805662278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805662268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388ededf29300534583361d2496fcab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1685194223}
+  canvas: {fileID: 423347149}
+  WorldToScreen: {x: 0, y: 0}
+  pickup: {fileID: 0}
+  collectible_type: {fileID: 0}
+  newCollectionUIImage: {fileID: 0}
+  startingpos: {x: 0, y: 0}
+  endingpos: {x: 0, y: 0}
+  speed: 1
 --- !u!1001 &809685473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32792,7 +32820,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8631068, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -40809,7 +40837,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8631068, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -42527,6 +42555,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4210300624627084636}
     m_Modifications:
+    - target: {fileID: 3486332259640841385, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: BigSurf_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332259980181003, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: BigSurf_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332260069518582, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cherry_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332260283381188, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Parley_Text
+      objectReference: {fileID: 0}
     - target: {fileID: 3486332260293839177, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -42537,16 +42585,66 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2093689675}
+    - target: {fileID: 3486332260769780704, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Orange_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261014013584, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Apple_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261230744719, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Parley_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261304472267, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pear_Icon
+      objectReference: {fileID: 0}
     - target: {fileID: 3486332261413533263, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2093689675}
+    - target: {fileID: 3486332261414027468, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Apple_Icon
+      objectReference: {fileID: 0}
     - target: {fileID: 3486332261432503659, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2093689675}
+    - target: {fileID: 3486332261443177907, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Orange_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261476561866, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Poison_Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261609376852, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Cherry_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261673132592, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pear_Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486332261710751663, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Poison_Text
+      objectReference: {fileID: 0}
     - target: {fileID: 3486332261713148121, guid: 8084f5494f06bf046a3e20d5dffbd7b8,
         type: 3}
       propertyPath: m_Name
@@ -43236,7 +43334,7 @@ MonoBehaviour:
     ModeOverride: 2
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8631068, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
