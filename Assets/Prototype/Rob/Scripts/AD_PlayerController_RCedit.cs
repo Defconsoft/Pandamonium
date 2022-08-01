@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using DG.Tweening;
 using Cinemachine;
 
@@ -26,7 +27,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     float transLerpTime;
     public Transform lerpEndPoint;
     Transform CityStartPoint;
-    public CinemachineVirtualCamera StartCut, StartCam, RollingCam, CityCam, CutsceneCam;
+    public CinemachineVirtualCamera StartCut, StartCam, RollingCam, CityCam, CutsceneCam, CutsceneCam2;
     public CinemachineBrain camBrain;
     // public RC_BearController theBear;
     public AD_EnemyController enemy;
@@ -40,6 +41,19 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     bool Started;
     bool Intro = true;
 
+    float desiredAlphaIn = 1;
+    float desiredAlphaOut = 0;
+    float currentAlpha;
+    float currentFade = 1f;
+    bool CamIn, CamOut, FadeOut;
+    public CanvasGroup cutsceneCanvas;
+    GameObject CollectContainer;
+    public GameObject ParticleContainer;
+    public Image JuiceFill;
+    bool FillJuice;
+    float JuiceAmount;
+    public GameObject FruitSlider;
+
     
     
     // Start is called before the first frame update
@@ -47,6 +61,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine (StartGame());
+        CollectContainer = GameObject.Find("Collectibles");
     }
 
     void OnMove(InputValue movementValue)
@@ -91,6 +106,26 @@ public class AD_PlayerController_RCedit : MonoBehaviour
                 RunTheCutScene();
             }
         }
+
+
+        if (CamIn){
+            currentAlpha = Mathf.MoveTowards( currentAlpha, desiredAlphaIn, 2.0f * Time.deltaTime);
+        }
+
+        if (CamOut){
+            currentAlpha = Mathf.MoveTowards( currentAlpha, desiredAlphaOut, 2.0f * Time.deltaTime);
+        }
+
+        if (FadeOut){
+            currentFade = Mathf.MoveTowards( currentFade, 0, 0.5f * Time.deltaTime);
+        }
+
+        if (FillJuice){
+            JuiceAmount = Mathf.MoveTowards( JuiceAmount, 1, 0.5f * Time.deltaTime);
+        }
+        gameObject.GetComponent<Renderer>().sharedMaterial.SetFloat("_Progress", currentFade);
+        cutsceneCanvas.alpha = currentAlpha;
+        JuiceFill.fillAmount = JuiceAmount;
     }
 
     void FixedUpdate()
@@ -135,22 +170,49 @@ public class AD_PlayerController_RCedit : MonoBehaviour
 
     private void RunTheCutScene()
     {
+        Debug.Log ("StartCutscene");
         camBrain.m_DefaultBlend.m_Time = 0;
         CutsceneCam.m_Priority = 2;
         Vector3 jumpPoint = new Vector3 (0, transform.position.y, transform.position.z + 50f);
-        GetComponent<Transform>().DOLocalJump (jumpPoint, 4f, 1, 4f);
+        GetComponent<Transform>().DOLocalJump (jumpPoint, 4f, 1, 1f);
+        
         StartCoroutine(SwitchToCity());
     }
 
     IEnumerator SwitchToCity(){
+                    
+        yield return new WaitForSeconds(2f); //This is the jump pause
         anim.SetBool("IsRunning", false);
-        yield return new WaitForSeconds(4f);
+        anim.SetTrigger("Attack2");
+        CamIn = true;
+        camBrain.m_DefaultBlend.m_Time = 2;
+        CutsceneCam.m_Priority = 1;
+        CutsceneCam2.m_Priority = 2;
+        Destroy(GameObject.Find("Hill"), 2f); //This is the camera zoom pause
+        foreach (Transform child in CollectContainer.transform) {
+            Destroy(child.gameObject);
+        }
+        yield return new WaitForSeconds(1f);  //Wait for the fade
+        FadeOut = true;
+        foreach (Transform child in ParticleContainer.transform) {
+            child.GetComponent<ParticleSystem>().Play();
+        }
+        FruitSlider.SetActive (true);
+        FillJuice = true;
+        yield return new WaitForSeconds(4f); // Holds him in the air
+        foreach (Transform child in ParticleContainer.transform) {
+            child.GetComponent<ParticleSystem>().Stop();
+        }
+        FruitSlider.SetActive (false);
+        FillJuice = false;
         // GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Transform>().DOLocalMove (lerpEndPoint.position, 2f);
         camBrain.m_DefaultBlend.m_Time = 2;
-        CutsceneCam.m_Priority = 1;
+        CutsceneCam2.m_Priority = 1;
         CityCam.m_Priority = 2;
-        Destroy(GameObject.Find("Hill"), 1f);
+        
+        CamIn = false;
+        CamOut = true;
         yield return new WaitForSeconds(2f);
         // theBear.Move = true;
         enemy.Move = true;
