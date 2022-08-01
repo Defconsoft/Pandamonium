@@ -23998,8 +23998,8 @@ MonoBehaviour:
   unitName: The Duck
   unitLevel: 99
   damage: 10
-  maxHP: 100
-  currentHP: 100
+  maxHP: 1
+  currentHP: 1
   anim: {fileID: 1770016342}
   ignoreCols: []
 --- !u!114 &805662278
