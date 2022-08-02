@@ -3536,7 +3536,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.114276126, w: -0.2782091}
+  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.11427612, w: -0.2782091}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -56888,6 +56888,7 @@ MonoBehaviour:
     type: 3}
   gameOverDialogue: {fileID: 1094747456}
   anim: {fileID: 2140908478}
+  attackVFXOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &2110747799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 970ee9b3ee5698848a073a842fd53729,
