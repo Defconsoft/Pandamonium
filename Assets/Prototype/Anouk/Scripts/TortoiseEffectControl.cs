@@ -6,6 +6,9 @@ public class TortoiseEffectControl : MonoBehaviour
 {
     public GameObject[] flameObjects;
     public GameObject[] blastObjects;
+    public float impactDelayFlame = 0.4f;
+    public float impactDelayBlast = 0.5f;
+    public Animator playerAnim;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class TortoiseEffectControl : MonoBehaviour
         {
             go.SetActive(true);
         }
+        StartCoroutine(DelayOuch(impactDelayFlame));
     }
 
     public void StopFlameThrowerEffect()
@@ -42,6 +46,7 @@ public class TortoiseEffectControl : MonoBehaviour
         {
             go.SetActive(true);
         }
+        StartCoroutine(DelayOuch(impactDelayBlast));
     }
 
     public void StopBlastEffect()
@@ -50,5 +55,12 @@ public class TortoiseEffectControl : MonoBehaviour
         {
             go.SetActive(false);
         }
+    }
+
+    IEnumerator DelayOuch(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        AD_EventManager.TookDamage();
+        playerAnim.SetTrigger("Ouch");
     }
 }

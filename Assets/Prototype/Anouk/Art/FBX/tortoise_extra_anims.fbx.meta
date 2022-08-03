@@ -1,53 +1,33 @@
 fileFormatVersion: 2
-guid: aecd1679f4128ae49bc67226ccfd5a41
+guid: f40dd5fe916c6a043a64118269c6deec
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -9129434720014514961
-    second: turtle|PoseLibCroc
+      74: 8971258128481080686
+    second: tortoise|CrocBite
   - first:
-      74: 3856412529943182119
-    second: turtle|Run.001
+      74: -657141364384384478
+    second: tortoise|IdleTurtle
   - first:
-      74: -1212650788637560165
-    second: turtle|wave.001
+      74: -7130654709073807810
+    second: tortoise|OuchTortoise
   - first:
-      74: -6827900383080642629
-    second: Armature.004|Attack01
+      74: -69798810055457581
+    second: tortoise|PoseLibCroc
   - first:
-      74: 2850005457352369418
-    second: Armature.004|Attack02
+      74: -5301546441132197559
+    second: tortoise|Run.001
   - first:
-      74: -1111294150686044704
-    second: Armature.004|Attack03
+      74: -9198523904508237484
+    second: tortoise|tortoiseFlame
   - first:
-      74: 8641424537882322557
-    second: Armature.004|Attack03.001
+      74: 5234647100726251178
+    second: tortoise|tortoiseShoot
   - first:
-      74: -852645190781981240
-    second: Armature.004|Attack03.002
-  - first:
-      74: 2263333045268041191
-    second: Armature.004|Idle
-  - first:
-      74: -2290105560677875581
-    second: Armature.004|PoseLib
-  - first:
-      74: 1575867018300343091
-    second: Armature.004|PoseLibCroc
-  - first:
-      74: 1690476349912347297
-    second: Armature.004|Run
-  - first:
-      74: -3214441455449014129
-    second: Armature.004|Run.001
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: turtle_bod
-    second: {fileID: 2100000, guid: 94af2259fe6bd154cb2b05abadb091d1, type: 2}
+      74: 7990645372436037579
+    second: tortoise|TurtleWalk
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,11 +57,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature.004|Attack01
-      takeName: Armature.004|Attack01
+      name: tortoise|IdleTurtle
+      takeName: tortoise|IdleTurtle
       internalID: 0
       firstFrame: 0
-      lastFrame: 35
+      lastFrame: 119
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -106,11 +86,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Attack02
-      takeName: Armature.004|Attack02
+      name: tortoise|OuchTortoise
+      takeName: tortoise|OuchTortoise
       internalID: 0
       firstFrame: 0
-      lastFrame: 56
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -135,11 +115,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Attack03
-      takeName: Armature.004|Attack03
+      name: tortoise|tortoiseFlame
+      takeName: tortoise|tortoiseFlame
       internalID: 0
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -164,11 +144,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Idle
-      takeName: Armature.004|Idle
+      name: tortoise|tortoiseShoot
+      takeName: tortoise|tortoiseShoot
       internalID: 0
       firstFrame: 0
-      lastFrame: 199
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -193,18 +173,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature.004|Run
-      takeName: Armature.004|Run
+      name: tortoise|TurtleWalk
+      takeName: tortoise|TurtleWalk
       internalID: 0
       firstFrame: 0
-      lastFrame: 69
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

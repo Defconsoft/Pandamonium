@@ -34,6 +34,7 @@ public class RC_BattleSystem : MonoBehaviour
     [Header("Anouk's crap")]
     public GameObject gameOverDialogue;
     public Animator anim;
+    public Vector3 attackVFXOffset = new Vector3(0f,0f,0f);
 
 
     // Start is called before the first frame update

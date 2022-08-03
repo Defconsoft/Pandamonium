@@ -7,6 +7,7 @@ public class CrocAttack : MonoBehaviour
     public float startY = -1;
     public float endY = 2;
     public float lerpDuration = 0.5f;
+    public float zOffset = 0f;
     private float tempY;
     private float elapsedTime = 0;
 
@@ -26,17 +27,17 @@ public class CrocAttack : MonoBehaviour
         while (elapsedTime < lerpDuration)
         {
             tempY = Mathf.Lerp(startY, endY, elapsedTime / lerpDuration);
-            transform.position = new Vector3(currentPos.x, tempY, currentPos.z);
+            transform.position = new Vector3(currentPos.x, tempY, currentPos.z + zOffset);
             yield return new WaitForSeconds(timeStep);
             elapsedTime += timeStep;
         }
         tempY = endY;
-        transform.position = new Vector3(currentPos.x, tempY, currentPos.z);
+        transform.position = new Vector3(currentPos.x, tempY, currentPos.z + zOffset);
 
         yield return new WaitForSeconds(1);
         
         tempY = startY;
-        transform.position = new Vector3(currentPos.x, tempY, currentPos.z);
+        transform.position = new Vector3(currentPos.x, tempY, currentPos.z + zOffset);
         Destroy(gameObject);
     }
 }
