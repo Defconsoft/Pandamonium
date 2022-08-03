@@ -189,25 +189,25 @@ public class RC_UXManager : MonoBehaviour
 		case 0: // Critters
             Overlay.DOFade (1, 0.5f);
             Cards[selectedItem].SetActive (true);
-            Cards[selectedItem].transform.DOPunchScale(new Vector3(0.5f,0.5f, 0.5f), 0.5f, 6, 1f);
+            Cards[selectedItem].transform.DOPunchScale(new Vector3(.3f, .3f, .3f), 1f, 10, 1f);
         break;
 
 		case 1: // Items
             Overlay.DOFade (1, 0.5f);
             Cards[selectedItem].SetActive (true);
-            Cards[selectedItem].transform.DOPunchScale(new Vector3(0.5f,0.5f, 0.5f), 0.5f, 6, 1f);            
+            Cards[selectedItem].transform.DOPunchScale(new Vector3(.3f, .3f, .3f), 1f, 10, 1f);           
         break;
 
 		case 2: // Items
             Overlay.DOFade (1, 0.5f);
             Cards[selectedItem].SetActive (true);
-            Cards[selectedItem].transform.DOPunchScale(new Vector3(0.5f,0.5f, 0.5f), 0.5f, 6, 1f);           
+            Cards[selectedItem].transform.DOPunchScale(new Vector3(.3f, .3f, .3f), 1f, 10, 1f);          
         break;
 
 		case 3: // Items
             Overlay.DOFade (1, 0.5f);
             Cards[selectedItem].SetActive (true);
-            Cards[selectedItem].transform.DOPunchScale(new Vector3(0.5f,0.5f, 0.5f), 0.5f, 6, 1f);           
+            Cards[selectedItem].transform.DOPunchScale(new Vector3(.3f, .3f, .3f), 1f, 10, 1f);          
         break;
         }    
 
