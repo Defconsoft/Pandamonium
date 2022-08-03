@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Prototype/UX.unity
+    guid: 5111d0524ec351f40a9222e4d17b3bd3
+  - enabled: 1
+    path: Assets/Prototype/CombinedRC.unity
+    guid: c16ac998da8173046bd0882596ce8702
+  - enabled: 1
+    path: Assets/Prototype/CombinedRC_Japan.unity
+    guid: da6b72f1f6a644942be4db8a759221ee
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 96e20eb66641b0e4689eaaa5644f8610,
       type: 2}
