@@ -1311,7 +1311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -41200964, y: -4521120}
+  m_AnchoredPosition: {x: -41216148, y: -4522784}
   m_SizeDelta: {x: 1179, y: 1142}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &343134610
@@ -6450,6 +6450,9 @@ MonoBehaviour:
   stealthfill: {fileID: 1889224034}
   powerText: {fileID: 1812611198}
   stealthText: {fileID: 615094293}
+  cursorTexture: {fileID: 2800000, guid: 463b35ce185c0214eb3f61f1317c59f9, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!4 &1189682026
 Transform:
   m_ObjectHideFlags: 0
