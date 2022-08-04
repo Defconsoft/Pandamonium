@@ -6501,7 +6501,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356585, y: 0.9531149, z: -0.114276126, w: -0.2782091}
+  m_LocalRotation: {x: -0.033356577, y: 0.9531149, z: -0.1142761, w: -0.27820912}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -40750,7 +40750,7 @@ PrefabInstance:
     - target: {fileID: 7412498900594133783, guid: 90c40beec8a0de540a0e327c870cbf55,
         type: 3}
       propertyPath: maxHP
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7412498900594133783, guid: 90c40beec8a0de540a0e327c870cbf55,
         type: 3}
@@ -40760,7 +40760,7 @@ PrefabInstance:
     - target: {fileID: 7412498900594133783, guid: 90c40beec8a0de540a0e327c870cbf55,
         type: 3}
       propertyPath: currentHP
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 897123489320285185, guid: 90c40beec8a0de540a0e327c870cbf55, type: 3}
@@ -49073,7 +49073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!222 &3486332260254336936
 CanvasRenderer:
   m_ObjectHideFlags: 0
