@@ -6501,7 +6501,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144375801}
-  m_LocalRotation: {x: -0.033356573, y: 0.9531149, z: -0.114276096, w: -0.2782091}
+  m_LocalRotation: {x: -0.033356577, y: 0.9531149, z: -0.1142761, w: -0.27820912}
   m_LocalPosition: {x: 16.2445, y: 17.04624, z: -17.945044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -22669,7 +22669,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679951895}
-  m_LocalRotation: {x: -0.024147129, y: 0.96351767, z: -0.09316029, w: -0.24974363}
+  m_LocalRotation: {x: -0.024147116, y: 0.96351767, z: -0.09316025, w: -0.24974358}
   m_LocalPosition: {x: 6.743492, y: 12.58635, z: -32.08161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47085,7 +47085,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc242caea4204984896b939ecddb561b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57b0518a95c12fa489cfb959b9347521, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -47674,7 +47674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &3486332259838337952
 GameObject:
   m_ObjectHideFlags: 0
@@ -49073,7 +49073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &3486332260254336936
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49315,7 +49315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Strawberry Dino | Level 100
+  m_text: Flint | Level 100
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 060495751d7ddfb4797ce743d80fce07, type: 2}
   m_sharedMaterial: {fileID: -3682086202528658930, guid: 060495751d7ddfb4797ce743d80fce07,
