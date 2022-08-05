@@ -90,6 +90,9 @@ public class RC_UXManager : MonoBehaviour
             SetShopArrays (0);
         break;
 
+		case 4: // Loads the game
+            SceneManager.LoadScene("CombinedRC_Japan");
+        break;
         }
     }
 
