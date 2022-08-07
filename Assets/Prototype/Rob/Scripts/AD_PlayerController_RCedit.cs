@@ -218,6 +218,7 @@ public class AD_PlayerController_RCedit : MonoBehaviour
         enemy.Move = true;
         yield return new WaitForSeconds (4f);
         BattleCanvas.SetActive (true);
+        Cursor.visible = true;
         HillCanvas.SetActive(false);
     }
 

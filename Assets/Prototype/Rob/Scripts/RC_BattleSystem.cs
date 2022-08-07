@@ -44,6 +44,7 @@ public class RC_BattleSystem : MonoBehaviour
         StartCoroutine(SetupBattle());
         PlayerChatbox.SetActive (false);
         EnemyChatbox.SetActive (false);
+        
     }
 
     private IEnumerator SetupBattle()
